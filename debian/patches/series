@@ -1,0 +1,5 @@
+01_makefile.patch
+02_cplusplus.patch
+04_includes.patch
+05_compiler_warnings.patch
+06_fix_manpages.patch
