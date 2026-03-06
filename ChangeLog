@@ -1,3 +1,31 @@
+Thu Aug  4 18:47:10 2022	Jutta Degener (jutta@pobox.com)
+
+	* Release 1.0 Patchlevel 22
+	Remove unused, and occasionally out of date, VERSION variable
+	from Makefile.
+
+Sun Jul 31 16:17:59 2022	Jutta Degener (jutta@pobox.com)
+
+	* Release 1.0 Patchlevel 21
+	Use $(LN), not ln, in the Makefile rules for the installed binary
+ 	of untoast and tcat.
+	(Thanks to Carlo Cabrera for pointing that out!)
+
+Mon Jul  4 10:34:18 2022
+
+	* Release 1.0 Patchlevel 20
+	Use $(RMFLAGS) with the rms in the Makefile; add -f to $(RMFLAGS) to
+        avoid spurious error messages during build.
+
+Fri Mar 27 15:18:06  2020
+
+	* Release 1.0 Patchlevel 19
+	Make it easier to include gsm.h from C++ by wrapping it with macros. 
+	Throw a #define _POSIX_C_SOURCE 200809L into toast.h to make it
+	possible for Linux glibc to just work.
+	(Thanks to enh@google.com for the suggestion; errors are mine.)
+	Switch from compress/.Z to gzip/.gz 
+
 Sat May  5 21:48:20  2018
 
 	* Release 1.0 Patchlevel 18

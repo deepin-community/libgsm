@@ -1,5 +1,6 @@
 From: Jochen Friedrich <jochen@scram.de> 
 Subject: Correct manual page markup
+Forwarded: yes
 
 --- a/man/gsm.3
 +++ b/man/gsm.3
