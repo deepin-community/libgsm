@@ -29,15 +29,19 @@ override_dh_auto_build:
 	$(MAKE) $(CROSS) "CCFLAGS=$(CCFLAGS)" "LDFLAGS=$(LDFLAGS)" MULHACK=$(MULTYPE) all
 
 override_dh_install:
-	mkdir -p debian/tmp/usr/lib debian/tmp/usr/bin debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH) debian/libgsm1/usr/lib/$(DEB_HOST_MULTIARCH)
-	$(MAKE) $(CROSS) "LDFLAGS=$(LDFLAGS)" INSTALL_ROOT=debian/tmp/usr GSM_INSTALL_INC=debian/libgsm1-dev/usr/include/gsm GSM_INSTALL_MAN=debian/libgsm1-dev/usr/share/man/man3 TOAST_INSTALL_MAN=debian/libgsm-tools/usr/share/man/man1 install
+	install --directory --mode 755 debian/libgsm1/usr/lib/$(DEB_HOST_MULTIARCH)
+	mv lib/*so.* debian/libgsm1/usr/lib/$(DEB_HOST_MULTIARCH)
+
+	install --directory --mode 755 debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH)
 	mv lib/*so debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH)
 	mv lib/*a debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH)
-	mv lib/*so.* debian/libgsm1/usr/lib/$(DEB_HOST_MULTIARCH)
-	dh_install
 
-override_dh_strip:
-	dh_strip --dbgsym-migration='libgsm1-dbg (<< 1.0.18-1~)'
+	#mkdir -p debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH) debian/libgsm1/usr/lib/$(DEB_HOST_MULTIARCH)
+	#mv lib/*so debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH)
+	#mv lib/*a debian/libgsm1-dev/usr/lib/$(DEB_HOST_MULTIARCH)
+	#mv lib/*so.* debian/libgsm1/usr/lib/$(DEB_HOST_MULTIARCH)
+
+	dh_install
 
 override_dh_auto_clean:
 	$(MAKE) clean

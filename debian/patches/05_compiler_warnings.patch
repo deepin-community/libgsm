@@ -1,5 +1,6 @@
 From: Jochen Friedrich <jochen@scram.de>
 Subject: Clean up comiler warnings (Closes: #226561)
+Forwarded: yes
 
 --- a/src/toast.c
 +++ b/src/toast.c
