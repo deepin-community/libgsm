@@ -1,1 +1,2 @@
-libgsm source: debian-watch-uses-insecure-uri http://www.quut.com/gsm/
+# upstream does not provide access via https
+libgsm source: debian-watch-uses-insecure-uri http://www.quut.com/gsm/ (line 2)

@@ -1,3 +1,49 @@
+libgsm (1.0.22-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Fri, 30 Sep 2022 23:54:15 +0200
+
+libgsm (1.0.19-3) unstable; urgency=medium
+
+  * adopt package (Closes: #1009975)
+  * debian/control: move maintenance to the mobcom team
+  * debian/control: bump Standards-Version to 4.6.1
+  * debian/control: use VCS URLs from the mobcom team
+  * Thanks to Marriott NZ <marriott99@gmx.com> for the report about the
+    quotes in the mailcap entry. This was already fixed in 1.0.19-1.
+    (Closes: #987404)
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Fri, 01 Jul 2022 22:03:02 +0200
+
+libgsm (1.0.19-2) unstable; urgency=medium
+
+  * Orphan.
+
+ -- Felix Lechner <felix.lechner@lease-up.com>  Thu, 21 Apr 2022 08:09:00 -0700
+
+libgsm (1.0.19-1) unstable; urgency=medium
+
+  * New upstream release. Thanks to Florian Ernst for the notification!
+    (Closes: #1004544)
+  * Drop debian/patches/02_cplusplus.patch, which also provided the sole new
+    feature in this release. Both added a C++ guard to gsm.h. (See: #202712)
+  * Bump patchlevel to 19 in d/patches/01_makefile.patch.
+  * Refresh remaining patches.
+  * Mark remaining patches as having been forwarded to upstream.
+  * Do not run 'make install'; install from build location instead.
+  * Drop quotes from placeholder in mailcap entry.
+  * Complete debug symbol migration for libgsm1-dbg (<< 1.0.18-1~).
+  * Bump Debhelper level to 13.
+  * Use debbhelper-compat instead of d/compat.
+  * Add "Rules-Requires-Root: no" in d/control.
+  * Bump Standards-Version to 4.6.0.
+  * Bump d/watch file standard to 4.
+  * Provide a d/upstream/metadata file with basic information.
+  * Update Debian copyright.
+
+ -- Felix Lechner <felix.lechner@lease-up.com>  Mon, 31 Jan 2022 10:02:12 -0800
+
 libgsm (1.0.18-2) unstable; urgency=medium
 
   [ gregor herrmann ]

@@ -1,5 +1,6 @@
 From: Jochen Friedrich <jochen@scram.de>
 Subject: Change errno handling to fix Hurd (Closes: #164191, #164194)
+Forwarded: yes
 
 ---
  inc/toast.h |    9 +++++++--
@@ -8,7 +9,7 @@ Subject: Change errno handling to fix Hurd (Closes: #164191, #164194)
 
 --- a/inc/toast.h
 +++ b/inc/toast.h
-@@ -16,11 +16,12 @@
+@@ -20,11 +20,12 @@
  
  #include <stdio.h>
  #include <ctype.h>
@@ -23,7 +24,7 @@ Subject: Change errno handling to fix Hurd (Closes: #164191, #164194)
  #endif
  
  #ifdef	HAS_LIMITS_H
-@@ -37,6 +38,10 @@
+@@ -41,6 +42,10 @@
  # endif
  #endif
  
